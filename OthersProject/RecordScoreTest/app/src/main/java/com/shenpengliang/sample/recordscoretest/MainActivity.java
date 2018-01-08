@@ -75,6 +75,10 @@ public class MainActivity extends AppCompatActivity {
 
         mWindowManager.addView(mView, params);
 
+
+
+
+        //测试
     }
 
     public View setUpView(Context context){
