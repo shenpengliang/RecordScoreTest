@@ -74,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
         params.gravity = Gravity.CENTER;
 
         mWindowManager.addView(mView, params);
+
     }
 
     public View setUpView(Context context){
