@@ -24,6 +24,7 @@ public class Main2Activity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        //测试合并顺序
     }
 
 }
