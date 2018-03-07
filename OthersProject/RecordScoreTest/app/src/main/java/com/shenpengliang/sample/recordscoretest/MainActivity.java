@@ -1,10 +1,12 @@
 package com.shenpengliang.sample.recordscoretest;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PixelFormat;
 import android.support.annotation.ColorInt;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -31,8 +34,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showPopUpWindow(View view){
-        new MyPopUpWindow(this).showAtLocation(user_input,Gravity.CENTER,0,0);
-
+//        new MyPopUpWindow(this).showAtLocation(user_input,Gravity.CENTER,0,0);
+        AlertDialog dialog = new AlertDialog.Builder(this).create();
+        dialog.setButton(DialogInterface
+                .BUTTON_NEGATIVE, "好的", new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(MainActivity.this,"点击我了",Toast.LENGTH_SHORT).show();
+            }
+        });
+        WindowManager.LayoutParams lp = dialog.getWindow().getAttributes();
+        lp.type = WindowManager
+                .LayoutParams
+                .TYPE_APPLICATION_PANEL;
+        dialog.getWindow().setAttributes(lp);
+        dialog.show();
     }
     public void floatWindow(Context context){
         if(isShowing){
