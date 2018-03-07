@@ -26,6 +26,7 @@ public class Main2Activity extends AppCompatActivity {
         });
         //测试合并顺序
         //主分支合并
+        //我是1.0
     }
 
 }
